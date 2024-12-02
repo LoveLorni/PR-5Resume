@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.scss">
+</head>
+<body>
+    <header class="header">
+        <h1>Резюме</h1>
+        <button class="theme-toggle" onclick="toggleTheme()">Темна/Біла тема</button>
+    </header>
+
+    <main class="main-content">
+        <section class="profile">
+            <div class="profile-photo">
+                <img src="/images/logo.jpg" alt="Фото">
+            </div>
+            <div class="profile-info">
+                <h2>Бердар Юрій Юрійович</h2>
+                <p>Професія: Веб-розробник</p>
+                <p>Місце проживання: Кошице, Словакія</p>
+                <p>Телефон: +380 97 397 11 81</p>
+                <p>Email: <a href="mailto:ivan@example.com">berdar@example.com</a></p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Вміння</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git</li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            <h2>Досвід роботи</h2>
+            <p>Збірка компютерів у компанії Mifcom,  Кошице, Словакія(2024-2025)</p>
+            <p>Молодший веб-розробник у компанії UAkino, Київ, Україна (2022-2023)</p>
+        </section>
+
+     
+        <section class="gallery">
+            <h2>Галерея</h2>
+            <div class="filter">
+                <button onclick="filterGallery('all')">Всі</button>
+                <button onclick="filterGallery('web')">Веб</button>
+                <button onclick="filterGallery('design')">Дизайн</button>
+            </div>
+            <div class="gallery-items">
+                <div class="gallery-item web">
+                    <img src="/images/web1.jpg" alt="Веб-проект 1">
+                    <p>Веб-проект 1</p>
+                </div>
+                <div class="gallery-item design">
+                    <img src="/images/design1.jpg" alt="Дизайн 1">
+                    <p>Дизайн 1</p>
+                </div>
+               
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Work UA</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
